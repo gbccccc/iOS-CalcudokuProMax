@@ -9,18 +9,18 @@ def start_loc(size):
         case(4):
             return (51, 152)
         case(5):
-            return (0, 0)
+            return (52, 152)
         case(6):
-            return (0, 0)
+            return (51, 152)
         
 def displacement(size):
     match(size):
         case(4):
             return 54
         case(5):
-            return 0
+            return 43
         case(6):
-            return 0
+            return 36
 
 def difficulty_mark(d):
     match(d):
@@ -39,13 +39,13 @@ def separate(x, y, size, image, marker, group):
     group.append((x, y))
     marker[y][x] = True
     black = ImageColor.getrgb("#000000")
-    if x > 0 and not marker[y][x - 1] and image.getpixel((start_loc(4)[0] + x * displacement(size), start_loc(4)[1] + y * displacement(size) + 20)) != black:
+    if x > 0 and not marker[y][x - 1] and image.getpixel((start_loc(size)[0] + x * displacement(size), start_loc(size)[1] + y * displacement(size) + 10)) != black:
         separate(x - 1, y, size, image, marker, group)
-    if y > 0 and not marker[y - 1][x] and image.getpixel((start_loc(4)[0] + x * displacement(size) + 20, start_loc(4)[1] + y * displacement(size))) != black:
+    if y > 0 and not marker[y - 1][x] and image.getpixel((start_loc(size)[0] + x * displacement(size) + 10, start_loc(size)[1] + y * displacement(size))) != black:
         separate(x, y - 1, size, image, marker, group)
-    if x < size - 1 and not marker[y][x + 1] and image.getpixel((start_loc(4)[0] + (x + 1) * displacement(size), start_loc(4)[1] + y * displacement(size) + 20)) != black:
+    if x < size - 1 and not marker[y][x + 1] and image.getpixel((start_loc(size)[0] + (x + 1) * displacement(size), start_loc(size)[1] + y * displacement(size) + 10)) != black:    
         separate(x + 1, y, size, image, marker, group)
-    if y < size - 1 and not marker[y + 1][x] and image.getpixel((start_loc(4)[0] + x * displacement(size) + 20, start_loc(4)[1] + (y + 1) * displacement(size))) != black:
+    if y < size - 1 and not marker[y + 1][x] and image.getpixel((start_loc(size)[0] + x * displacement(size) + 10, start_loc(size)[1] + (y + 1) * displacement(size))) != black:
         separate(x, y + 1, size, image, marker, group)
 
 def detect_rule(group, image_path):
@@ -54,7 +54,7 @@ def detect_rule(group, image_path):
     
     for cell in group:
         loc = (start_loc(4)[0] + cell[0] * displacement(size), start_loc(4)[1] + cell[1] * displacement(size))
-        target_field = image.crop((loc[0] + 3, loc[1] + 2, loc[0] + displacement(size), loc[1] + 2 * displacement(size) / 5))
+        target_field = image.crop((loc[0] + 3, loc[1] + 3, loc[0] + displacement(size) - 5, loc[1] + 2 * displacement(size) / 5))
         # target_field.show()
         result = pytesseract.image_to_string(target_field, config=config)
         result = result.strip()
@@ -70,10 +70,10 @@ def to_json(dir_path, json_name, rules):
         json.dump(rules, json_file, indent=2)
 
 if __name__ == "__main__":
-    s_size = 4
+    s_size = 5
     s_vol = 1
     s_difficulty = 0
-    s_book = 1
+    s_book = 2
     for size in range(4, 7):
         for vol in range(1, 21):
             for difficulty in range(5):
@@ -89,7 +89,10 @@ if __name__ == "__main__":
                                     
                     marker = []
                     for i in range(size):
-                        marker.append([False, False, False, False])
+                        line = []
+                        for j in range(size):
+                            line.append(False)
+                        marker.append(line)
                     groups = []
                     for y in range(size):
                         for x in range(size):
@@ -107,3 +110,4 @@ if __name__ == "__main__":
                     json_path = f"./rule/size{size}/vol{vol}/{difficulty_mark(difficulty)}"
                     json_name = f"book{book}.json"
                     to_json(json_path, json_name, rules)
+                    exit()
