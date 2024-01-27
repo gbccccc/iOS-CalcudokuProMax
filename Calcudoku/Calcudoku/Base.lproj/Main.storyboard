@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zrB-Fc-coS">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--4*4 Calcudoku-->
+        <scene sceneID="3Ns-8v-4Vj">
+            <objects>
+                <tableViewController id="o6Y-TN-gvu" customClass="VolumeTableViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="DRG-2M-bYA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reusingCell" id="5uL-id-nMd">
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5uL-id-nMd" id="hWL-MP-TKZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bBt-dL-e2r" kind="show" identifier="toBookMenu" id="R3l-pw-DSM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="dataSource" destination="o6Y-TN-gvu" id="M65-HJ-m2j"/>
+                            <outlet property="delegate" destination="o6Y-TN-gvu" id="uqV-J8-RXB"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="4*4" image="puzzlepiece.fill" catalog="system" id="Bg9-Qx-T4m"/>
+                    <navigationItem key="navigationItem" title="4*4 Calcudoku" id="AL2-08-Kzq"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="calcudokuSize">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYb-mo-iHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-266" y="-1094"/>
+        </scene>
+        <!--6*6 Calcudoku-->
+        <scene sceneID="JaN-aV-QYu">
+            <objects>
+                <tableViewController id="3Pj-Us-vDw" customClass="VolumeTableViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="TuT-4u-cLB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reusingCell" id="Zhb-Ys-Tv4">
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zhb-Ys-Tv4" id="rDE-R5-mzt">
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bBt-dL-e2r" kind="show" identifier="toBookMenu" id="Kt6-8U-DNQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3Pj-Us-vDw" id="8DQ-AI-3jE"/>
+                            <outlet property="delegate" destination="3Pj-Us-vDw" id="nCw-5E-xsl"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="6*6" image="puzzlepiece.fill" catalog="system" id="slT-oD-YmB"/>
+                    <navigationItem key="navigationItem" title="6*6 Calcudoku" id="mcS-XD-fcs"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="calcudokuSize">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1gJ-3n-twF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-266" y="252"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cv7-iM-UuN">
+            <objects>
+                <navigationController id="zrB-Fc-coS" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nbd-rV-mN1">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="c8d-1x-MYW" kind="relationship" relationship="rootViewController" id="wS0-s4-9WI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FG5-6B-3QC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3053" y="251"/>
+        </scene>
+        <!--Volume Menu-->
+        <scene sceneID="aTm-jo-VR7">
+            <objects>
+                <tabBarController id="c8d-1x-MYW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Volume Menu" id="QYz-fw-XNF"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E79-wc-5J0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="o6Y-TN-gvu" kind="relationship" relationship="viewControllers" id="CeN-NG-8zb"/>
+                        <segue destination="V4v-Hw-GcP" kind="relationship" relationship="viewControllers" id="Cz0-g2-dMT"/>
+                        <segue destination="3Pj-Us-vDw" kind="relationship" relationship="viewControllers" id="gsg-it-DPd"/>
+                        <segue destination="OdQ-Tf-f0r" kind="relationship" relationship="viewControllers" id="yfO-LR-fmU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXs-Cr-JG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1784" y="251"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="sZz-ql-Qkh">
+            <objects>
+                <viewController id="OdQ-Tf-f0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Ct-b0-kAs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thanks to krazydad.com for data source!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4f-DG-fa2">
+                                <rect key="frame" x="16" y="171" width="357" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Developer: gbccccc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT8-LC-iaP">
+                                <rect key="frame" x="16" y="242" width="357" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calcudoku Collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3z-KW-7Sa">
+                                <rect key="frame" x="16" y="115" width="357" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iqZ-qm-07q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="About" image="info" catalog="system" id="rAZ-iP-PR6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XN8-Zh-7Ul" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-266.41221374045801" y="960.56338028169023"/>
+        </scene>
+        <!--5*5 Calcudoku-->
+        <scene sceneID="6yO-53-lNZ">
+            <objects>
+                <tableViewController id="V4v-Hw-GcP" customClass="VolumeTableViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="BRF-0b-eFr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reusingCell" id="HVt-Nz-8GG">
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HVt-Nz-8GG" id="K2s-3E-L5O">
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bBt-dL-e2r" kind="show" identifier="toBookMenu" id="1TA-Xv-Lyt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="V4v-Hw-GcP" id="WC0-7B-ONT"/>
+                            <outlet property="delegate" destination="V4v-Hw-GcP" id="Fs6-rJ-K0c"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="5*5" image="puzzlepiece.fill" catalog="system" id="e5h-yI-H6l"/>
+                    <navigationItem key="navigationItem" title="5*5 Calcudoku" id="eDp-pM-Lpf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="calcudokuSize">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCy-d3-DiD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-266" y="-410"/>
+        </scene>
+        <!--Book Menu-->
+        <scene sceneID="Cf0-fs-2pd">
+            <objects>
+                <tableViewController id="bBt-dL-e2r" customClass="BookTableViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8Z9-jO-W9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusingCell" id="uqO-we-Nlq">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uqO-we-Nlq" id="xBb-mo-xoO">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="RoP-nI-BOP" kind="show" identifier="toBook" id="hUx-zP-4Zy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bBt-dL-e2r" id="O7Z-nS-HwZ"/>
+                            <outlet property="delegate" destination="bBt-dL-e2r" id="ihv-dG-oXM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Book Menu" id="ADn-fO-6LC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbC-Hk-APQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="251"/>
+        </scene>
+        <!--Book-->
+        <scene sceneID="OFn-RV-CDT">
+            <objects>
+                <viewController id="RoP-nI-BOP" customClass="BookViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Qc-Re-67p">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHK-8r-Wvn">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences" javaScriptEnabled="NO"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rDs-9n-9cl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CHK-8r-Wvn" firstAttribute="leading" secondItem="rDs-9n-9cl" secondAttribute="leading" id="301-za-5Lf"/>
+                            <constraint firstItem="CHK-8r-Wvn" firstAttribute="width" secondItem="rDs-9n-9cl" secondAttribute="width" id="Hhv-FM-m65"/>
+                            <constraint firstItem="CHK-8r-Wvn" firstAttribute="height" secondItem="rDs-9n-9cl" secondAttribute="height" id="NOS-Re-g6t"/>
+                            <constraint firstItem="CHK-8r-Wvn" firstAttribute="top" secondItem="rDs-9n-9cl" secondAttribute="top" id="nAW-Dc-RZJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Book" id="eSM-CA-SOa"/>
+                    <connections>
+                        <outlet property="webView" destination="CHK-8r-Wvn" id="BTr-ag-IUm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MeY-8q-zBO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2250" y="251"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1TA-Xv-Lyt"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="info" catalog="system" width="93" height="128"/>
+        <image name="puzzlepiece.fill" catalog="system" width="128" height="81"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
