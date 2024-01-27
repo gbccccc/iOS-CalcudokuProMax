@@ -61,6 +61,7 @@ def detect_rule(group, image_path):
         result = result.replace(" ", "")
         if re.match("\d+[\+\-x\/]", result):
             return {"target": int(result[0:len(result) - 1]), "calculation": result[len(result) - 1] if result[len(result) - 1] != "x" else "*", "cells": group}
+    return {"target": None, "calculation": None, "cells": group}
         
 def to_json(dir_path, json_name, rules):
     if not os.path.exists(dir_path):
@@ -70,10 +71,10 @@ def to_json(dir_path, json_name, rules):
         json.dump(rules, json_file, indent=2)
 
 if __name__ == "__main__":
-    s_size = 5
+    s_size = 6
     s_vol = 1
     s_difficulty = 0
-    s_book = 2
+    s_book = 1
     for size in range(4, 7):
         for vol in range(1, 21):
             for difficulty in range(5):
@@ -110,4 +111,3 @@ if __name__ == "__main__":
                     json_path = f"./rule/size{size}/vol{vol}/{difficulty_mark(difficulty)}"
                     json_name = f"book{book}.json"
                     to_json(json_path, json_name, rules)
-                    exit()
