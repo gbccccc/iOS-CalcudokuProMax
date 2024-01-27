@@ -1,6 +1,8 @@
 from PIL import Image, ImageColor, ImageDraw
 import pytesseract
-import cv2
+import re
+import json
+import os
 
 def start_loc(size):
     match(size):
@@ -47,46 +49,61 @@ def separate(x, y, size, image, marker, group):
         separate(x, y + 1, size, image, marker, group)
 
 def detect_rule(group, image_path):
-    config = r'tessedit_char_whitelist=1234567890+-x/'
+    config = r'--psm 10'
+    image = Image.open(image_path)
     
     for cell in group:
         loc = (start_loc(4)[0] + cell[0] * displacement(size), start_loc(4)[1] + cell[1] * displacement(size))
-        # target_field = image[loc[1]+5:loc[1]-5 + displacement(size), loc[0]+10:loc[0]+10 + displacement(size)]
-        result = pytesseract.image_to_string(image_path, config=config)
-        # result = reader.readtext(image, allowlist="1234567890+-x/", threshold=0.0, text_threshold=0.0)
-        print(result)
+        target_field = image.crop((loc[0] + 3, loc[1] + 2, loc[0] + displacement(size), loc[1] + 2 * displacement(size) / 5))
+        # target_field.show()
+        result = pytesseract.image_to_string(target_field, config=config)
+        result = result.strip()
+        result = result.replace(" ", "")
+        if re.match("\d+[\+\-x\/]", result):
+            return {"target": int(result[0:len(result) - 1]), "calculation": result[len(result) - 1] if result[len(result) - 1] != "x" else "*", "cells": group}
         
-        # i_pil = Image.open(image_path)
-        # draw = ImageDraw.Draw(i_pil)
-        # for i in result:
-        #     draw.rectangle([tuple(i[0][0]), tuple(i[0][2])], fill=None, outline = 'red', width = 2)
-        # i_pil.show()
-        
-def to_json(path, description):
-    ...
+def to_json(dir_path, json_name, rules):
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
+    json_path = dir_path + "/" + json_name
+    with open(json_path, "w", encoding = "utf-8") as json_file:
+        json.dump(rules, json_file, indent=2)
 
 if __name__ == "__main__":
-    size = 4
-    vol = 1
-    difficulty = 0
-    book = 1
-    
-    image_path = f"./image/size{size}/vol{vol}/{difficulty_mark(difficulty)}/book{book}/0.png"
-    image = Image.open(image_path, mode="r")
-    
-    marker = []
-    for i in range(size):
-        marker.append([False, False, False, False])
-    groups = []
-    for y in range(size):
-        for x in range(size):
-            if not marker[y][x]:
-                group = []
-                separate(x, y, size, image, marker, group)
-                groups.append(group)
-    print(groups)
-    
-    result = detect_rule(groups[0], image_path)
-    
-    
-    
+    s_size = 4
+    s_vol = 1
+    s_difficulty = 0
+    s_book = 1
+    for size in range(4, 7):
+        for vol in range(1, 21):
+            for difficulty in range(5):
+                for book in range(1, 21):
+                    if (size, vol, difficulty, book) < (s_size, s_vol, s_difficulty, s_book):
+                        continue
+                    
+                    image_path = f"./image/size{size}/vol{vol}/{difficulty_mark(difficulty)}/book{book}/0.png"
+                    try:
+                        image = Image.open(image_path, mode="r")
+                    except:
+                        continue
+                                    
+                    marker = []
+                    for i in range(size):
+                        marker.append([False, False, False, False])
+                    groups = []
+                    for y in range(size):
+                        for x in range(size):
+                            if not marker[y][x]:
+                                group = []
+                                separate(x, y, size, image, marker, group)
+                                groups.append(group)
+                    print(groups)
+                    
+                    rules = []
+                    for group in groups:
+                        rule = detect_rule(group, image_path)
+                        rules.append(rule)
+                    
+                    json_path = f"./rule/size{size}/vol{vol}/{difficulty_mark(difficulty)}"
+                    json_name = f"book{book}.json"
+                    to_json(json_path, json_name, rules)
