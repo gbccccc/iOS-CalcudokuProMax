@@ -88,15 +88,15 @@ class BookTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "toBook" {
-            let bookViewController = segue.destination as! BookViewController
-            bookViewController.calcudokuSize = self.calcudokuSize
-            bookViewController.difficulty = self.difficulty
-            bookViewController.volumeIndex = self.volumeIndex
+        if segue.identifier == "toCalcudoku" {
+            let calcudokuController = segue.destination as! CalcudokuController
+            calcudokuController.size = self.calcudokuSize
+            calcudokuController.difficulty = self.difficulty
+            calcudokuController.volumeIndex = self.volumeIndex
             
             let cell = sender as! UITableViewCell
             let indexPath = self.tableView.indexPath(for: cell)
-            bookViewController.bookIndex = indexPath!.row + 1
+            calcudokuController.bookIndex = indexPath!.row + 1
         }
     }
     

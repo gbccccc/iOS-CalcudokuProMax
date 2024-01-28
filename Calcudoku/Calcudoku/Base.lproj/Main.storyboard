@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!--4*4 Calcudoku-->
         <scene sceneID="3Ns-8v-4Vj">
             <objects>
-                <tableViewController id="o6Y-TN-gvu" customClass="VolumeTableViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="o6Y-TN-gvu" customClass="VolumeTableViewController" customModule="Calcudoku" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="DRG-2M-bYA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +56,7 @@
         <!--6*6 Calcudoku-->
         <scene sceneID="JaN-aV-QYu">
             <objects>
-                <tableViewController id="3Pj-Us-vDw" customClass="VolumeTableViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="3Pj-Us-vDw" customClass="VolumeTableViewController" customModule="Calcudoku" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="TuT-4u-cLB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,7 +171,7 @@
         <!--5*5 Calcudoku-->
         <scene sceneID="6yO-53-lNZ">
             <objects>
-                <tableViewController id="V4v-Hw-GcP" customClass="VolumeTableViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="V4v-Hw-GcP" customClass="VolumeTableViewController" customModule="Calcudoku" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="BRF-0b-eFr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +211,7 @@
         <!--Book Menu-->
         <scene sceneID="Cf0-fs-2pd">
             <objects>
-                <tableViewController id="bBt-dL-e2r" customClass="BookTableViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bBt-dL-e2r" customClass="BookTableViewController" customModule="Calcudoku" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8Z9-jO-W9Z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +225,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="RoP-nI-BOP" kind="show" identifier="toBook" id="hUx-zP-4Zy"/>
+                                    <segue destination="kD4-R9-uQ6" kind="show" identifier="toCalcudoku" id="wTQ-rl-NEV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -237,42 +238,111 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbC-Hk-APQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1178" y="251"/>
+            <point key="canvasLocation" x="1177.8625954198474" y="250.7042253521127"/>
         </scene>
-        <!--Book-->
-        <scene sceneID="OFn-RV-CDT">
+        <!--Calcudoku Controller-->
+        <scene sceneID="ftG-iT-OUM">
             <objects>
-                <viewController id="RoP-nI-BOP" customClass="BookViewController" customModule="Calcudoku_Collection" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8Qc-Re-67p">
+                <viewController id="kD4-R9-uQ6" customClass="CalcudokuController" customModule="Calcudoku" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="shR-pB-ab7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHK-8r-Wvn">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OjP-d4-EIt">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences" javaScriptEnabled="NO"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="We6-q0-WeS">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="444.33333333333331"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpi-yc-9sa">
+                                                <rect key="frame" x="0.0" y="25.666666666666657" width="393" height="393"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hWW-3F-y9x">
+                                                        <rect key="frame" x="3" y="3" width="387" height="387"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="hWW-3F-y9x" firstAttribute="height" secondItem="kpi-yc-9sa" secondAttribute="height" constant="-6" id="8c3-EI-DzO"/>
+                                                    <constraint firstItem="hWW-3F-y9x" firstAttribute="centerX" secondItem="kpi-yc-9sa" secondAttribute="centerX" id="KRa-se-H1D"/>
+                                                    <constraint firstItem="hWW-3F-y9x" firstAttribute="width" secondItem="kpi-yc-9sa" secondAttribute="width" constant="-6" id="MCv-XJ-rTJ"/>
+                                                    <constraint firstItem="hWW-3F-y9x" firstAttribute="centerY" secondItem="kpi-yc-9sa" secondAttribute="centerY" id="Q7j-iF-YAD"/>
+                                                    <constraint firstAttribute="width" secondItem="kpi-yc-9sa" secondAttribute="height" multiplier="1:1" id="cXR-ps-xOx"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="kpi-yc-9sa" firstAttribute="centerX" secondItem="We6-q0-WeS" secondAttribute="centerX" id="789-hb-UQa"/>
+                                            <constraint firstItem="kpi-yc-9sa" firstAttribute="width" secondItem="We6-q0-WeS" secondAttribute="width" id="AM3-Ou-gXc"/>
+                                            <constraint firstItem="kpi-yc-9sa" firstAttribute="centerY" secondItem="We6-q0-WeS" secondAttribute="centerY" id="mjI-fU-xdS"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LdT-1A-qfR">
+                                        <rect key="frame" x="0.0" y="444.33333333333343" width="393" height="221.66666666666669"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="cRz-71-9XI">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="29.666666666666668"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="GDD-Og-xdi">
+                                                <rect key="frame" x="0.0" y="32.666666666666622" width="393" height="98.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1at-C5-C2k">
+                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="98.333333333333329"/>
+                                                        <color key="backgroundColor" name="AccentColor"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Clear"/>
+                                                        <connections>
+                                                            <action selector="putValue:" destination="kD4-R9-uQ6" eventType="touchUpInside" id="Faq-9o-esD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bm-g2-K3b">
+                                                        <rect key="frame" x="198" y="0.0" width="195" height="98.333333333333329"/>
+                                                        <color key="backgroundColor" name="AccentColor"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="AllClear"/>
+                                                        <connections>
+                                                            <action selector="allClear" destination="kD4-R9-uQ6" eventType="touchUpInside" id="zU8-NJ-y89"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABo-B9-9bA">
+                                                <rect key="frame" x="0.0" y="134" width="393" height="87.666666666666686"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GDD-Og-xdi" firstAttribute="height" secondItem="kpi-yc-9sa" secondAttribute="height" multiplier="0.25" id="ALo-I3-O7l"/>
+                                    <constraint firstItem="We6-q0-WeS" firstAttribute="height" secondItem="OjP-d4-EIt" secondAttribute="height" multiplier="0.667" id="O4a-T8-CHy"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="rDs-9n-9cl"/>
+                        <viewLayoutGuide key="safeArea" id="gv1-GK-4ls"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CHK-8r-Wvn" firstAttribute="leading" secondItem="rDs-9n-9cl" secondAttribute="leading" id="301-za-5Lf"/>
-                            <constraint firstItem="CHK-8r-Wvn" firstAttribute="width" secondItem="rDs-9n-9cl" secondAttribute="width" id="Hhv-FM-m65"/>
-                            <constraint firstItem="CHK-8r-Wvn" firstAttribute="height" secondItem="rDs-9n-9cl" secondAttribute="height" id="NOS-Re-g6t"/>
-                            <constraint firstItem="CHK-8r-Wvn" firstAttribute="top" secondItem="rDs-9n-9cl" secondAttribute="top" id="nAW-Dc-RZJ"/>
+                            <constraint firstItem="OjP-d4-EIt" firstAttribute="top" secondItem="gv1-GK-4ls" secondAttribute="top" id="ESl-gF-soq"/>
+                            <constraint firstItem="OjP-d4-EIt" firstAttribute="leading" secondItem="gv1-GK-4ls" secondAttribute="leading" id="VbM-vh-wGp"/>
+                            <constraint firstItem="OjP-d4-EIt" firstAttribute="width" secondItem="gv1-GK-4ls" secondAttribute="width" id="bCZ-18-iUp"/>
+                            <constraint firstItem="OjP-d4-EIt" firstAttribute="height" secondItem="gv1-GK-4ls" secondAttribute="height" id="fI1-90-BR2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Book" id="eSM-CA-SOa"/>
+                    <navigationItem key="navigationItem" id="mak-O3-OKF"/>
                     <connections>
-                        <outlet property="webView" destination="CHK-8r-Wvn" id="BTr-ag-IUm"/>
+                        <outlet property="inputStack" destination="cRz-71-9XI" id="9YF-FU-lyt"/>
+                        <outlet property="verticalStackView" destination="hWW-3F-y9x" id="Q7i-ML-epT"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MeY-8q-zBO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5m-ps-Pqt" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="251"/>
+            <point key="canvasLocation" x="2324" y="251"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -281,6 +351,9 @@
     <resources>
         <image name="info" catalog="system" width="93" height="128"/>
         <image name="puzzlepiece.fill" catalog="system" width="128" height="81"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

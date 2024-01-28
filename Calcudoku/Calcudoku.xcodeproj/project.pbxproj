@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A1B7FE72B65EA3D00C41915 /* CalcudokuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B7FE62B65EA3D00C41915 /* CalcudokuController.swift */; };
+		7A1B7FE82B65EA3D00C41915 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B7FE42B65EA3C00C41915 /* Cell.swift */; };
+		7A1B7FEA2B65EA9E00C41915 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B7FE92B65EA9E00C41915 /* Rule.swift */; };
 		7A89C9F32B6548DC00216CD1 /* rule in Resources */ = {isa = PBXBuildFile; fileRef = 7A89C9F22B6548DC00216CD1 /* rule */; };
 		7AC4C3E82B64942B00B116BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C3E72B64942B00B116BE /* AppDelegate.swift */; };
 		7AC4C3EA2B64942B00B116BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C3E92B64942B00B116BE /* SceneDelegate.swift */; };
@@ -14,12 +17,14 @@
 		7AC4C3EF2B64942B00B116BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC4C3ED2B64942B00B116BE /* Main.storyboard */; };
 		7AC4C3F12B64942C00B116BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC4C3F02B64942C00B116BE /* Assets.xcassets */; };
 		7AC4C3F42B64942C00B116BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC4C3F22B64942C00B116BE /* LaunchScreen.storyboard */; };
-		7AC4C3FE2B64951800B116BE /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C3FB2B64951800B116BE /* BookViewController.swift */; };
 		7AC4C3FF2B64951800B116BE /* VolumeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C3FC2B64951800B116BE /* VolumeTableViewController.swift */; };
 		7AC4C4002B64951800B116BE /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C3FD2B64951800B116BE /* BookTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A1B7FE42B65EA3C00C41915 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		7A1B7FE62B65EA3D00C41915 /* CalcudokuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcudokuController.swift; sourceTree = "<group>"; };
+		7A1B7FE92B65EA9E00C41915 /* Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		7A89C9F22B6548DC00216CD1 /* rule */ = {isa = PBXFileReference; lastKnownFileType = folder; path = rule; sourceTree = "<group>"; };
 		7AC4C3E42B64942B00B116BE /* Calcudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calcudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC4C3E72B64942B00B116BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +34,6 @@
 		7AC4C3F02B64942C00B116BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AC4C3F32B64942C00B116BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AC4C3F52B64942C00B116BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7AC4C3FB2B64951800B116BE /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		7AC4C3FC2B64951800B116BE /* VolumeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeTableViewController.swift; sourceTree = "<group>"; };
 		7AC4C3FD2B64951800B116BE /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,16 +68,18 @@
 		7AC4C3E62B64942B00B116BE /* Calcudoku */ = {
 			isa = PBXGroup;
 			children = (
-				7AC4C3FD2B64951800B116BE /* BookTableViewController.swift */,
-				7AC4C3FB2B64951800B116BE /* BookViewController.swift */,
-				7A89C9F22B6548DC00216CD1 /* rule */,
 				7AC4C3FC2B64951800B116BE /* VolumeTableViewController.swift */,
+				7AC4C3FD2B64951800B116BE /* BookTableViewController.swift */,
+				7A1B7FE62B65EA3D00C41915 /* CalcudokuController.swift */,
+				7A1B7FE42B65EA3C00C41915 /* Cell.swift */,
+				7A1B7FE92B65EA9E00C41915 /* Rule.swift */,
 				7AC4C3E72B64942B00B116BE /* AppDelegate.swift */,
 				7AC4C3E92B64942B00B116BE /* SceneDelegate.swift */,
 				7AC4C3EB2B64942B00B116BE /* ViewController.swift */,
 				7AC4C3ED2B64942B00B116BE /* Main.storyboard */,
-				7AC4C3F02B64942C00B116BE /* Assets.xcassets */,
 				7AC4C3F22B64942C00B116BE /* LaunchScreen.storyboard */,
+				7AC4C3F02B64942C00B116BE /* Assets.xcassets */,
+				7A89C9F22B6548DC00216CD1 /* rule */,
 				7AC4C3F52B64942C00B116BE /* Info.plist */,
 			);
 			path = Calcudoku;
@@ -153,8 +159,10 @@
 			files = (
 				7AC4C3FF2B64951800B116BE /* VolumeTableViewController.swift in Sources */,
 				7AC4C3EC2B64942B00B116BE /* ViewController.swift in Sources */,
-				7AC4C3FE2B64951800B116BE /* BookViewController.swift in Sources */,
+				7A1B7FE72B65EA3D00C41915 /* CalcudokuController.swift in Sources */,
+				7A1B7FEA2B65EA9E00C41915 /* Rule.swift in Sources */,
 				7AC4C3E82B64942B00B116BE /* AppDelegate.swift in Sources */,
+				7A1B7FE82B65EA3D00C41915 /* Cell.swift in Sources */,
 				7AC4C4002B64951800B116BE /* BookTableViewController.swift in Sources */,
 				7AC4C3EA2B64942B00B116BE /* SceneDelegate.swift in Sources */,
 			);
