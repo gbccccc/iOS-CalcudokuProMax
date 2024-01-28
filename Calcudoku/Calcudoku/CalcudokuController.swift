@@ -262,6 +262,10 @@ class CalcudokuController: UIViewController {
         for cellButton in cellButtons {
             cellButton.setTitle("", for: UIControl.State.normal)
         }
+        
+        for rule in rules {
+            rule.status = .HasNil
+        }
     }
     
     func decideCellColor(cell: Cell) -> UIColor {
